@@ -9,6 +9,8 @@ use App\Http\Controllers\frontend\ContactusController;
 use App\Http\Controllers\admin\PaperController;
 use App\Http\Controllers\admin\DepartController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\CoursesController;
+use App\Http\Controllers\GalleryController;
 
 use App\Models\Paper;
 
@@ -26,6 +28,8 @@ use App\Models\Paper;
 Route::get('/',[HomeController::class,'index']);
 
 Route::get('/about',[AboutController::class,'index']);
+Route::get('/courses',[CoursesController::class,'index']);
+Route::get('/gallery',[GalleryController::class,'index']);
 
 Route::get('/contact',[ContactusController::class,'index']);
 Route::post('/contact',[ContactusController::class,'enqury']);

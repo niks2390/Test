@@ -70,6 +70,7 @@
                 <a href="{{url('/about')}}" class="nav-item nav-link {{request()->is('about') ? 'active' : ''}}" >About</a>
                 <a href="{{url('/courses')}}" class="nav-item nav-link {{request()->is('courses') ? 'active' : ''}}">Courses</a>
                 <a href="{{url('/contact')}}" class="nav-item nav-link {{request()->is('contact') ? 'active' : ''}}">Contact</a>
+                <a href="{{url('/gallery')}}" class="nav-item nav-link {{request()->is('contact') ? 'active' : ''}}">Gallery</a>
             </div>
             <!-- <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a> -->
             <ul class="navbar-nav ms-auto">
