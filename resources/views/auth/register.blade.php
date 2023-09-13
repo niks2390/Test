@@ -1,5 +1,5 @@
+@extends('layouts.app')
 
-@extends('layouts.main')
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -25,19 +25,6 @@
                             </div>
                         </div>
 
-                        <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Company Name') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('cname') is-invalid @enderror" name="cname" value="{{ old('name') }}" required autocomplete="name" autofocus>
-
-                                @error('cname')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
                         <div class="row mb-3">
                             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
 

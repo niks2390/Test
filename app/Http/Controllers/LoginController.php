@@ -7,7 +7,9 @@ use Illuminate\Http\Request;
 class LoginController extends Controller
 {
     public function register(){
-        return view('register');
+        echo "Hello";
+        exit();
+        //return view('register');
     }
     public function register_submit(Request $registerData){
     //    echo "<pre>";

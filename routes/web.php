@@ -38,9 +38,9 @@ Route::post('/contact',[ContactusController::class,'enqury']);
 Route::get('/register',[LoginController::class, 'register'])->name('register');
 Route::post('/register',[LoginController::class, 'register_submit'])->name('register');
 
-Auth::routes();
+// Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //Admin routes
 Route::get('/admin',[App\Http\Controllers\admin\HomeController::class,'index']);
@@ -56,3 +56,7 @@ Route::post('/admin/department', [App\Http\Controllers\DepartController::class,'
 Route::get('/admin/department/delete/{id}',[App\Http\Controllers\DepartController::class, 'delete'])->name('department.delete');
 Route::get('/admin/department/edit/{id}',[App\Http\Controllers\DepartController::class, 'edit'])->name('department.edit');
 Route::post('/admin/department/update/{id}',[App\Http\Controllers\DepartController::class, 'update']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
