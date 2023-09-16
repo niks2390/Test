@@ -7,22 +7,30 @@ use Illuminate\Http\Request;
 
 class DepartController extends Controller
 {
-    public function index(){    
+    public function index(Request $request){   
+        $search = $request['search'] ?? "";
+        if ($search != "") {
+                $departmentData = Depart::where('department','LIKE',"%$search%")->orwhere('name','LIKE', "%$search%")->get();
+        } else {            
+            $departmentData = Depart::all();
+        }
+         
         $url = url('admin/department');
-        $departmentData = Depart::all();
-        $data = compact('departmentData','url');
+        $data = compact('departmentData','url','search');
         return view('admin/department')->with($data);
     }
 
     public function save(Request $request){
         $request->validate(
             [
-                'department' => 'required'
+                'department' => 'required',
+                'name' => 'required'
             ]
             );
         $department = new Depart;
         //print $department[''];
         $department->department = $request->department;
+        $department->name = $request->name;
         $department->save();
         return redirect('admin/department');
     }
